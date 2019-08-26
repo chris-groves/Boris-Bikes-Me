@@ -3,6 +3,8 @@ A Ruby based programme to support the operating of London's 'Boris Bikes'. This 
 
 The goal is to refine my programming skills in the following areas:
 
+* working with User Stories
+* domain modeling
 * test driving the development of a programme
 * debugging
 * adhering to object orientated principles such as encapsulation
@@ -10,3 +12,27 @@ The goal is to refine my programming skills in the following areas:
 The project originates from the Makers Academy coding bootcamp - further details can be found here:
 
 https://github.com/makersacademy/course/blob/master/boris_bikes/0_challenge_map.md
+
+# User Stories
+
+```
+As a person,
+So that I can use a bike,
+I'd like a docking station to release a bike.
+
+As a person,
+So that I can use a good bike,
+I'd like to see if a bike is working
+```
+
+# Domain Models
+
+| Objects         | Messages      |
+| --------------- |:-------------:|
+| Person          |               |
+| Bike            | working       |  
+| Docking Station | release       |   
+
+Docking Station ---> release ---> Bike
+
+Bike ---> working?
