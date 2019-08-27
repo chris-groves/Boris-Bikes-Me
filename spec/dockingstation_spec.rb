@@ -10,4 +10,15 @@ describe DockingStation do
     expect(bike.working?).to be true
   end
 
+  it 'resonds to a dock method' do
+    bike = subject.release_bike
+    expect(subject).to respond_to :dock
+  end
+
+  it 'stores a docked bike' do
+    bike = subject.release_bike
+    subject.dock(bike)
+    expect(subject.docked_bikes).to eq [bike]
+  end
+
 end
