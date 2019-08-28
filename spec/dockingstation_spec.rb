@@ -1,15 +1,23 @@
 require 'dockingstation'
 
 describe DockingStation do
+  it 'has a capacity which a user can set' do
+    expect(subject).to respond_to :capacity
+  end
+
+  it 'has a default capacity of 20' do
+    expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+  end
+
   describe '#release_bike' do
     it 'responds to release_bike method' do
-    expect(subject).to respond_to :release_bike
+      expect(subject).to respond_to :release_bike
     end
 
     it 'releases a bike' do
       bike = Bike.new
       subject.dock(bike)
-      subject.release_bike
+      expect(subject.release_bike).to eq [bike]
     end
 
     it 'raises an error if dockingstation is empty' do
