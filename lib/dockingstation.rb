@@ -1,14 +1,14 @@
 require_relative 'bike'
 
 class DockingStation
-  attr_reader :docked_bike
+  attr_reader :docked_bikes
 
   def initialize
-    @docked_bike = []
+    @docked_bikes = []
   end
 
   def release_bike
-    if @docked_bike == []
+    if @docked_bikes == []
       raise 'Error: cannot release a bike from an empty Dockingstation'
     else
       @docked_bike
@@ -16,10 +16,10 @@ class DockingStation
   end
 
   def dock(bike)
-    if @docked_bike.length == 1
+    if @docked_bikes.length >= 20
       raise 'Error: Dockingstation is full'
     else
-      @docked_bike.push(bike)
+      @docked_bikes.push(bike)
     end
   end
 end
