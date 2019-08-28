@@ -8,7 +8,11 @@ class DockingStation
   end
 
   def release_bike
-    Bike.new
+    if @docked_bike == ''
+      raise 'Error: cannot release a bike from an empty Dockingstation'
+    else
+      @docked_bike
+    end
   end
 
   def dock(bike)

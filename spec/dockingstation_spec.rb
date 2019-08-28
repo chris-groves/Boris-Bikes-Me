@@ -5,6 +5,16 @@ describe DockingStation do
     it 'responds to release_bike method' do
     expect(subject).to respond_to :release_bike
     end
+
+    it 'releases a bike' do
+      bike = Bike.new
+      subject.dock(bike)
+      subject.release_bike
+    end
+
+    it 'raises an error if an attempt is made to release a bike from empty dockingstation' do
+      expect { subject.release_bike }.to raise_error("Error: cannot release a bike from an empty Dockingstation")
+    end
   end
 
   describe '#working' do
@@ -27,7 +37,5 @@ describe DockingStation do
     expect(subject.docked_bike).to eq bike
   end
 
-  it 'raises an error if an attempt is made to release a bike from an empty dockingstation' do
-    expect { subject.release_bike }.to raise_error
-  end
+
 end
