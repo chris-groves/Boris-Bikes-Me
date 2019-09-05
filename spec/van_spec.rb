@@ -8,8 +8,8 @@ describe Van do
 
   it 'collects broken bikes' do
     docking_station = double("docking_station", :docked_working_bikes => [], :docked_broken_bikes => [bike] )
-    van = Van.new
-    van.collect_broken_bikes(docking_station)
-    expect(van.broken_bikes).to eq [bike]
+    subject.collect_broken_bikes(docking_station)
+    expect(subject.broken_bikes).to eq [bike]
+    expect(docking_station.docked_broken_bikes).to eq []
   end
 end
