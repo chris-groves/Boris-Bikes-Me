@@ -67,5 +67,14 @@ describe DockingStation do
       DockingStation::DEFAULT_CAPACITY.times { subject.dock bike }
       expect { subject.dock bike }.to raise_error("Error: Dockingstation is full")
     end
+
+    it 'receives fixed bikes from a van' do
+      garage = double("garage", :stored_fixed_bikes => [bike])
+      van = Van.new
+      van.collect_working_bikes(garage)
+      subject.dock_fixed_bikes(van)
+      expect(subject.docked_working_bikes).to eq [bike]
+      expect(van.working_bikes).to eq []
+    end
   end
 end

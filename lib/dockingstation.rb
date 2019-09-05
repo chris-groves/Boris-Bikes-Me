@@ -31,6 +31,15 @@ class DockingStation
     end
   end
 
+  def dock_fixed_bikes(van)
+    van.working_bikes.each do |bike|
+      @docked_working_bikes.push(bike)
+    end
+    van.working_bikes.clear
+  end
+
+
+
   private
 
   def full?
