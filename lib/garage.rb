@@ -1,5 +1,5 @@
 class Garage
-  attr_reader :stored_broken_bikes, :stored_fixed_bikes
+  attr_accessor :stored_broken_bikes, :stored_fixed_bikes
 
   def initialize
     @stored_broken_bikes = []
