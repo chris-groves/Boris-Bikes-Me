@@ -13,6 +13,10 @@ The project originates from the Makers Academy coding bootcamp - further details
 
 https://github.com/makersacademy/course/blob/master/boris_bikes/0_challenge_map.md
 
+Completed with reference to:
+
+https://github.com/soph-g/boris-bikes
+
 # User Stories
 
 ```
