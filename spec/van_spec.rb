@@ -26,4 +26,12 @@ describe Van do
     expect(subject.working_bikes).to eq [bike]
     expect(garage.stored_fixed_bikes).to eq []
   end
+
+  it 'contains no working bikes once these has been delivered to a dockingstation' do
+    garage = double("garage", :stored_fixed_bikes => [bike])
+    docking_station = DockingStation.new
+    subject.collect_working_bikes(garage)
+    docking_station.dock_fixed_bikes(subject)
+    expect(subject.working_bikes).to eq []
+  end
 end

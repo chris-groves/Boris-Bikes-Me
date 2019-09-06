@@ -15,6 +15,4 @@ describe Bike do
     subject.fix
     expect(subject.broken).to eq false
   end
-
-
 end
